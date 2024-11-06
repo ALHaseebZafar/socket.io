@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./index.css">
+  <title>Enhanced Chat App</title>
+</head>
+<body>
+  <!-- Registration Section -->
+  <div id="registration" class="modal" style="display: block">
+    <div class="modal-content">
+      <h2>Register</h2>
+      <input type="text" id="username" placeholder="Enter your name" />
+      <button id="registerBtn">Register</button>
+    </div>
+  </div>
+
+  <!-- Main Chat Interface -->
+  <div class="container" style="display: none" id="mainInterface">
+    <div class="sidebar">
+      <button id="createGroupBtn">Create Group</button>
+      <div class="chat-list">
+        <h3>Your Chats</h3>
+        <div id="chatsList"></div>
+      </div>
+      <div class="user-list">
+        <h3>Online Users</h3>
+        <div id="usersList"></div>
+      </div>
+    </div>
+
+    <div class="chat-section">
+      <div class="chat-header">
+        <h2 id="currentChatName">Select a chat</h2>
+        <div id="chatMembers"></div>
+      </div>
+
+      <div class="messages-container" id="messages"></div>
+      <div id="typingStatus" class="typing-status"></div>
+      <!-- && <button id="sendBtn">Seen</button> -->
+      <!-- <div id="seen" class="seen"></div> -->
+
+      <div class="input-container">
+        <input type="text" id="messageInput" placeholder="Type your message..." />
+        <input type="file" id="fileInput" style="display: none" />
+        <span class="upload-preview" id="uploadPreview"></span>
+        <button id="attachButton">📎</button>
+        <button id="sendBtn">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create Group Modal -->
+  <div id="createGroupModal" class="modal">
+    <div class="modal-content">
+      <h2>Create Group</h2>
+      <input type="text" id="groupName" placeholder="Group Name" />
+      <div id="groupUsersList" class="group-users-list"></div>
+      <button id="confirmGroupBtn">Create</button>
+      <button id="cancelGroupBtn">Cancel</button>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
